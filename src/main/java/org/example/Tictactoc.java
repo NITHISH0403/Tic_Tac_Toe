@@ -2,14 +2,14 @@ package org.example;
 
 import java.util.Scanner;
 class Game{
-        static String[][] a = new String[3][3];
-        int search;
-        Scanner s = new Scanner(System.in);
-        int player = 0;
-        String player1 = "Player 1 is Winner.";
-        String player2 = "Player 2 is Winner.";
-        String draw = "The Match is Draw.";
-        String design = "+-------+-------+-------+";
+    static String[][] a = new String[3][3];
+    int search;
+    Scanner s = new Scanner(System.in);
+    int player = 0;
+    String player1 = "Player 1 is Winner.";
+    String player2 = "Player 2 is Winner.";
+    String draw = "The Match is Draw.";
+    static String design = "+-------+-------+-------+";
     void players(){
         while (true) {
             //Player 1
@@ -99,28 +99,30 @@ class Game{
             for(int i = 0; i<3; i++){
                 //hor
                 if(a[i][0].equals(a[i][1]) && a[i][1].equals(a[i][2]) && a[i][2].equals(a[i][0])){
-                    System.out.println(player2);
-                    System.exit(0);
+                    win(player2);
+                    
                 }
                 //ver
                 else if(a[0][i].equals(a[1][i]) && a[1][i].equals(a[2][i]) && a[2][i].equals(a[0][i])){
-                    System.out.println(player2);
-                    System.exit(0);
+                    win(player2);
                 }
                 //left to right cross
                 else if (a[0][0].equals(a[1][1]) && a[1][1].equals(a[2][2])) {
-                    System.out.println(player2);
-                    System.exit(0);
+                    win(player2);
                     break;
                 }
                 //right to left cross
                 else if (a[0][2].equals(a[1][1]) && a[1][1].equals(a[2][0])) {
-                    System.out.println(player2);
-                    System.exit(0);
+                    win(player2);
                     break;
                 }
             }
         }
+    }
+    void win(String player2)
+    {
+        System.out.println(player2);
+        System.exit(0);
     }
 }
 public class Tictactoc extends Game{
