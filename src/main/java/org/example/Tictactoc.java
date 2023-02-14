@@ -1,23 +1,20 @@
 package org.example;
 
 import java.util.Scanner;
-import java.util.logging.*;
 class Game{
         static final String[][] a = new String[3][3];
         int search;
         Scanner s = new Scanner(System.in);
-        static Logger l = Logger.getLogger("NITHISH");
         int player = 0;
         String player1 = "Player 1 is Winner.";
-        String player2 = "Player 1 is Winner.";
+        String player2 = "Player 2 is Winner.";
         String draw = "The Match is Draw.";
-        static String design = "+-------+-------+-------+";
     void players(){
         while (true) {
             //Player 1
             if(player != 9) {
                 if (player % 2 == 0) {
-                    l.info("Choose the place in Player 1 -> X:");
+                    System.out.println("Choose the place in Player 1 -> X:");
                     search = s.nextInt();
                     for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 3; j++) {
@@ -27,38 +24,40 @@ class Game{
                                     player++;
                                 }
                                 else {
-                                    l.info("Please, Choose another place.");
+                                    System.out.println("Please, Choose another place.");
                                 }
                             }
                         }
                     }
-                    l.log(Level.info,()->design);
+                    System.out.println("+-------+-------+-------+");
                     for (int i = 0; i < 3; i++) {
-                        l.info("|");
+                        System.out.print("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
-                            l.log(Level.INFO,()->"\t" + n + "\t" + "|");
+                            System.out.print("\t" + n + "\t" + "|");
                         }
-                        l.log(Level.info,()->"\n" + design);
+                        System.out.println("\n+-------+-------+-------+");
                     }
                     for (int i = 0; i < 3; i++) {
                         //hor
                         if (a[i][0].equals(a[i][1]) && a[i][1].equals(a[i][2]) && a[i][2].equals(a[i][0])) {
-                            l.log(Level.info,()->player1);
+                            System.out.println(player1);
                             System.exit(0);
                         }
                         //ver
                         else if (a[0][i].equals(a[1][i]) && a[1][i].equals(a[2][i]) && a[2][i].equals(a[0][i])) {
-                            l.log(Level.info,()->player1);
+                            System.out.println(player1);
                             System.exit(0);
                         }
                         //left to right cross
                         else if (a[0][0].equals(a[1][1]) && a[1][1].equals(a[2][2])) {
-                            l.log(Level.info,()->player1);
+                            System.out.println(player1);
                             System.exit(0);
                             break;
-                        } else if (a[0][2].equals(a[1][1]) && a[1][1].equals(a[2][0])) {
-                            l.log(Level.info,()->player1);
+                        }
+                        //right to left cross
+                        else if (a[0][2].equals(a[1][1]) && a[1][1].equals(a[2][0])) {
+                            System.out.println(player1);
                             System.exit(0);
                             break;
                         }
@@ -66,7 +65,7 @@ class Game{
                 }
                 //player 2
                 else {
-                    l.info("Choose the place in Player 2 -> O:");
+                    System.out.println("Choose the place in Player 2 -> O:");
                     search = s.nextInt();
                     for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 3; j++) {
@@ -76,44 +75,49 @@ class Game{
                                     player++;
                                 }
                                 else {
-                                    l.info("Please, Choose another place.");
+                                    System.out.println("Please, Choose another place.");
                                 }
                             }
                         }
                     }
-                    l.log(Level.info,()->design);
+                    System.out.println("+-------+-------+-------+");
                     for (int i = 0; i < 3; i++) {
-                        l.info("|");
+                        System.out.print("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
-                            l.log(Level.INFO,()->"\t" + n + "\t" + "|");
+                            System.out.print("\t" + n + "\t" + "|");
                         }
-                        l.log(Level.info,()->"\n" + design);
+                        System.out.println("\n+-------+-------+-------+");
                     }
                 }
             }
             else{
-                l.log(Level.info,()->draw);
+                System.out.println(draw);
                 System.exit(0);
             }
             for(int i = 0; i<3; i++){
                 //hor
                 if(a[i][0].equals(a[i][1]) && a[i][1].equals(a[i][2]) && a[i][2].equals(a[i][0])){
-                    l.log(Level.info,()->player2);
+                    System.out.println(player2);
                     System.exit(0);
                 }
                 //ver
                 else if(a[0][i].equals(a[1][i]) && a[1][i].equals(a[2][i]) && a[2][i].equals(a[0][i])){
-                    l.log(Level.info,()->player2);
+                    System.out.println(player2);
                     System.exit(0);
                 }
                 //left to right cross
                 else if (a[0][0].equals(a[1][1]) && a[1][1].equals(a[2][2])) {
-                    l.log(Level.info,()->player2);
+                    System.out.println(player2);
                     System.exit(0);
                     break;
                 }
-
+                //right to left cross
+                else if (a[0][2].equals(a[1][1]) && a[1][1].equals(a[2][0])) {
+                    System.out.println(player2);
+                    System.exit(0);
+                    break;
+                }
             }
         }
     }
@@ -127,14 +131,14 @@ public class Tictactoc extends Game{
                 a[i][j] = String.valueOf(value++);
             }
         }
-        l.log(Level.info,()->design);
+        System.out.println("+-------+-------+-------+");
         for (int i = 0; i < 3; i++) {
-            l.info("|");
+            System.out.print("|");
             for (int j = 0; j < 3; j++) {
                 String n = String.valueOf(a[i][j]);
-                l.log(Level.INFO,()->"\t" + n + "\t" + "|");
+                System.out.print("\t" + n + "\t" + "|");
             }
-            l.log(Level.info,()->"\n" + design);
+            System.out.println("\n+-------+-------+-------+");
         }
         t.players();
     }
