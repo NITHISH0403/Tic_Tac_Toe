@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 class Game{
-        static String[][] a = new String[3][3];
+        public static String[][] a = new String[3][3];
         int search;
         Scanner s = new Scanner(System.in);
         int player = 0;
