@@ -74,7 +74,7 @@ class Game{
                         for (int j = 0; j < 3; j++) {
                             if ((a[i][j].equals(String.valueOf(search)))) {
                                 if (!a[i][j].equals("X") || !a[i][j].equals("O")) {
-                                    a[i][j] = "O";
+                                   static a[i][j] = "O";
                                     player++;
                                 }
                                 else {
