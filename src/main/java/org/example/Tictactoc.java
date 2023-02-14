@@ -6,7 +6,7 @@ class Game{
         static final String[][] a = new String[3][3];
         int search;
         Scanner s = new Scanner(System.in);
-        Logger l = Logger.getLogger("NITHISH");
+        static Logger l = Logger.getLogger("NITHISH");
         int player = 0;
         String player1 = "Player 1 is Winner.";
         String player2 = "Player 1 is Winner.";
@@ -31,7 +31,7 @@ class Game{
                             }
                         }
                     }
-                    System.out.println("+-------+-------+-------+");
+                    l.info("+-------+-------+-------+");
                     for (int i = 0; i < 3; i++) {
                         l.info("|");
                         for (int j = 0; j < 3; j++) {
@@ -126,13 +126,14 @@ public class Tictactoc extends Game{
                 a[i][j] = String.valueOf(value++);
             }
         }
-        System.out.println("+-------+-------+-------+");
+        l.info("+-------+-------+-------+");
         for (int i = 0; i < 3; i++) {
-            System.out.print("|");
+            l.info("|");
             for (int j = 0; j < 3; j++) {
-                System.out.print("\t" + a[i][j] + "\t" + "|");
+                String n = String.valueOf(a[i][j]);
+                l.log(Level.INFO,()->"\t" + n + "\t" + "|");
             }
-            System.out.println("\n+-------+-------+-------+");
+            l.info("\n+-------+-------+-------+");
         }
         t.players();
     }
