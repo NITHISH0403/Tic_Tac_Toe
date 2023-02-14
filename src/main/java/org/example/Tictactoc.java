@@ -4,7 +4,7 @@ import java.util.Scanner;
 class Game{
     int search;
     Scanner s = new Scanner(System.in);
-    int player = 0;
+    int play = 0;
     String player1 = "Player 1 is Winner.";
     String player2 = "Player 2 is Winner.";
     String draw = "The Match is Draw.";
@@ -12,15 +12,15 @@ class Game{
     void players(String[][] a){
         while (true) {
             //Player 1
-            if(player != 9) {
-                if (player % 2 == 0) {
+            if(play != 9) {
+                if (play % 2 == 0) {
                     System.out.println("Choose the place in Player 1 -> X:");
                     search = s.nextInt();
 
                     player(a, "X");
 
                     display(a);
-                    
+
                     win(a, player1);
                 }
                 //player 2
@@ -29,9 +29,9 @@ class Game{
                     search = s.nextInt();
 
                     player(a, "O");
-                    
+
                     display(a);
-                    
+
                     win(a, player2);
                 }
             }
@@ -48,7 +48,7 @@ class Game{
                 if ((a[i][j].equals(String.valueOf(search)))) {
                     if (!a[i][j].equals("X") || !a[i][j].equals("O")) {
                         a[i][j] = option;
-                        player++;
+                        play++;
                     }
                     else {
                         System.out.println("Please, Choose another place.");
