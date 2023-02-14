@@ -3,7 +3,7 @@ package org.example;
 import java.util.Scanner;
 import java.util.logging.*;
 class Game{
-        public static String[][] a = new String[3][3];
+        static String[][] a = new String[3][3];
         int search;
         Scanner s = new Scanner(System.in);
         Logger l = Logger.getLogger("NITHISH");
