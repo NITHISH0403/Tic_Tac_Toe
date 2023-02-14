@@ -2,7 +2,6 @@ package org.example;
 
 import java.util.Scanner;
 class Game{
-    static String[][] a = new String[3][3];
     int search;
     Scanner s = new Scanner(System.in);
     int player = 0;
@@ -10,7 +9,7 @@ class Game{
     String player2 = "Player 2 is Winner.";
     String draw = "The Match is Draw.";
     static String design = "+-------+-------+-------+";
-    void players(){
+    void players(String[][] a){
         while (true) {
             //Player 1
             if(player != 9) {
@@ -100,7 +99,7 @@ class Game{
                 //hor
                 if(a[i][0].equals(a[i][1]) && a[i][1].equals(a[i][2]) && a[i][2].equals(a[i][0])){
                     win(player2);
-                    
+
                 }
                 //ver
                 else if(a[0][i].equals(a[1][i]) && a[1][i].equals(a[2][i]) && a[2][i].equals(a[0][i])){
@@ -127,6 +126,7 @@ class Game{
 }
 public class Tictactoc extends Game{
     public static void main(String[] args) {
+        String[][] a = new String[3][3];
         int value = 1;
         Tictactoc t = new Tictactoc();
         for (int i = 0; i < 3; i++) {
@@ -143,6 +143,6 @@ public class Tictactoc extends Game{
             }
             System.out.println("\n" + design);
         }
-        t.players();
+        t.players(a);
     }
 }
