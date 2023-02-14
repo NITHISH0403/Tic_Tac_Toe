@@ -11,6 +11,7 @@ class Game{
         String player1 = "Player 1 is Winner.";
         String player2 = "Player 1 is Winner.";
         String draw = "The Match is Draw.";
+        static String design = "+-------+-------+-------+";
     void players(){
         while (true) {
             //Player 1
@@ -31,14 +32,14 @@ class Game{
                             }
                         }
                     }
-                    l.info("+-------+-------+-------+");
+                    l.info(design);
                     for (int i = 0; i < 3; i++) {
                         l.info("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
                             l.log(Level.INFO,()->"\t" + n + "\t" + "|");
                         }
-                        l.info("\n+-------+-------+-------+");
+                        l.info("\n" + design);
                     }
                     for (int i = 0; i < 3; i++) {
                         //hor
@@ -80,14 +81,14 @@ class Game{
                             }
                         }
                     }
-                    l.info("+-------+-------+-------+");
+                    l.info(design);
                     for (int i = 0; i < 3; i++) {
                         System.out.print("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
                             l.log(Level.INFO,()->"\t" + n + "\t" + "|");
                         }
-                        l.info("\n+-------+-------+-------+");
+                        l.info("\n" + design);
                     }
                 }
             }
@@ -126,14 +127,14 @@ public class Tictactoc extends Game{
                 a[i][j] = String.valueOf(value++);
             }
         }
-        l.info("+-------+-------+-------+");
+        l.info(design);
         for (int i = 0; i < 3; i++) {
             l.info("|");
             for (int j = 0; j < 3; j++) {
                 String n = String.valueOf(a[i][j]);
                 l.log(Level.INFO,()->"\t" + n + "\t" + "|");
             }
-            l.info("\n+-------+-------+-------+");
+            l.info("\n" + design);
         }
         t.players();
     }
