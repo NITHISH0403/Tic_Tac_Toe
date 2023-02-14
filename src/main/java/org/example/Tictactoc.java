@@ -9,6 +9,7 @@ class Game{
         String player1 = "Player 1 is Winner.";
         String player2 = "Player 2 is Winner.";
         String draw = "The Match is Draw.";
+        String design = "+-------+-------+-------+";
     void players(){
         while (true) {
             //Player 1
@@ -29,14 +30,14 @@ class Game{
                             }
                         }
                     }
-                    System.out.println("+-------+-------+-------+");
+                    System.out.println(design);
                     for (int i = 0; i < 3; i++) {
                         System.out.print("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
                             System.out.print("\t" + n + "\t" + "|");
                         }
-                        System.out.println("\n+-------+-------+-------+");
+                        System.out.println("\n" + design);
                     }
                     for (int i = 0; i < 3; i++) {
                         //hor
@@ -80,14 +81,14 @@ class Game{
                             }
                         }
                     }
-                    System.out.println("+-------+-------+-------+");
+                    System.out.println(design);
                     for (int i = 0; i < 3; i++) {
                         System.out.print("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
                             System.out.print("\t" + n + "\t" + "|");
                         }
-                        System.out.println("\n+-------+-------+-------+");
+                        System.out.println("\n" + design);
                     }
                 }
             }
@@ -131,14 +132,14 @@ public class Tictactoc extends Game{
                 a[i][j] = String.valueOf(value++);
             }
         }
-        System.out.println("+-------+-------+-------+");
+        System.out.println(design);
         for (int i = 0; i < 3; i++) {
             System.out.print("|");
             for (int j = 0; j < 3; j++) {
                 String n = String.valueOf(a[i][j]);
                 System.out.print("\t" + n + "\t" + "|");
             }
-            System.out.println("\n+-------+-------+-------+");
+            System.out.println("\n" + design);
         }
         t.players();
     }
