@@ -2,13 +2,14 @@ package org.example;
 
 import java.util.Scanner;
 class Game{
-        public static String[][] a = new String[3][3];
+        static String[][] a = new String[3][3];
         int search;
         Scanner s = new Scanner(System.in);
         int player = 0;
         String player1 = "Player 1 is Winner.";
         String player2 = "Player 2 is Winner.";
         String draw = "The Match is Draw.";
+        String design = "+-------+-------+-------+";
     void players(){
         while (true) {
             //Player 1
@@ -29,14 +30,14 @@ class Game{
                             }
                         }
                     }
-                    System.out.println("+-------+-------+-------+");
+                    System.out.println(design);
                     for (int i = 0; i < 3; i++) {
                         System.out.print("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
                             System.out.print("\t" + n + "\t" + "|");
                         }
-                        System.out.println("\n+-------+-------+-------+");
+                        System.out.println("\n" + design);
                     }
                     for (int i = 0; i < 3; i++) {
                         //hor
@@ -71,7 +72,7 @@ class Game{
                         for (int j = 0; j < 3; j++) {
                             if ((a[i][j].equals(String.valueOf(search)))) {
                                 if (!a[i][j].equals("X") || !a[i][j].equals("O")) {
-                                     a[i][j] = "O";
+                                    a[i][j] = "O";
                                     player++;
                                 }
                                 else {
@@ -80,14 +81,14 @@ class Game{
                             }
                         }
                     }
-                    System.out.println("+-------+-------+-------+");
+                    System.out.println(design);
                     for (int i = 0; i < 3; i++) {
                         System.out.print("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
                             System.out.print("\t" + n + "\t" + "|");
                         }
-                        System.out.println("\n+-------+-------+-------+");
+                        System.out.println("\n" + design);
                     }
                 }
             }
@@ -131,14 +132,14 @@ public class Tictactoc extends Game{
                 a[i][j] = String.valueOf(value++);
             }
         }
-        System.out.println("+-------+-------+-------+");
+        System.out.println(design);
         for (int i = 0; i < 3; i++) {
             System.out.print("|");
             for (int j = 0; j < 3; j++) {
                 String n = String.valueOf(a[i][j]);
                 System.out.print("\t" + n + "\t" + "|");
             }
-            System.out.println("\n+-------+-------+-------+");
+            System.out.println("\n" + design);
         }
         t.players();
     }
