@@ -88,7 +88,7 @@ class Game{
                             String n = String.valueOf(a[i][j]);
                             l.log(Level.INFO,()->"\t" + n + "\t" + "|");
                         }
-                        l.info("\n" + design);
+                        l.log(Level.info,()->"\n" + design);
                     }
                 }
             }
