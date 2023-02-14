@@ -32,14 +32,14 @@ class Game{
                             }
                         }
                     }
-                    l.info(design);
+                    l.log(Level.info,()->design);
                     for (int i = 0; i < 3; i++) {
                         l.info("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
                             l.log(Level.INFO,()->"\t" + n + "\t" + "|");
                         }
-                        l.info("\n" + design);
+                        l.log(Level.info,()->"\n" + design);
                     }
                     for (int i = 0; i < 3; i++) {
                         //hor
@@ -81,7 +81,7 @@ class Game{
                             }
                         }
                     }
-                    l.info(design);
+                    l.log(Level.info,()->design);
                     for (int i = 0; i < 3; i++) {
                         l.info("|");
                         for (int j = 0; j < 3; j++) {
@@ -93,7 +93,7 @@ class Game{
                 }
             }
             else{
-                l.info(draw);
+                l.log(Level.info,()->draw);
                 System.exit(0);
             }
             for(int i = 0; i<3; i++){
