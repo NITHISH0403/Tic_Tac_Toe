@@ -83,7 +83,7 @@ class Game{
                     }
                     l.info(design);
                     for (int i = 0; i < 3; i++) {
-                        System.out.print("|");
+                        l.info("|");
                         for (int j = 0; j < 3; j++) {
                             String n = String.valueOf(a[i][j]);
                             l.log(Level.INFO,()->"\t" + n + "\t" + "|");
