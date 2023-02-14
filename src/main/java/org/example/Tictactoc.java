@@ -8,7 +8,7 @@ class Game{
         Scanner s = new Scanner(System.in);
         Logger l = Logger.getLogger("NITHISH");
         int player = 0;
-    void player(){
+    void players(){
         while (true) {
             //Player 1
             if(player != 9) {
@@ -131,6 +131,6 @@ public class Tictactoc extends Game{
             }
             System.out.println("\n+-------+-------+-------+");
         }
-        t.player();
+        t.players();
     }
 }
