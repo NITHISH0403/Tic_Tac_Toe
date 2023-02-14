@@ -44,21 +44,21 @@ class Game{
                     for (int i = 0; i < 3; i++) {
                         //hor
                         if (a[i][0].equals(a[i][1]) && a[i][1].equals(a[i][2]) && a[i][2].equals(a[i][0])) {
-                            l.info(player1);
+                            l.log(Level.info,()->player1);
                             System.exit(0);
                         }
                         //ver
                         else if (a[0][i].equals(a[1][i]) && a[1][i].equals(a[2][i]) && a[2][i].equals(a[0][i])) {
-                            l.info(player1);
+                            l.log(Level.info,()->player1);
                             System.exit(0);
                         }
                         //left to right cross
                         else if (a[0][0].equals(a[1][1]) && a[1][1].equals(a[2][2])) {
-                            l.info(player1);
+                            l.log(Level.info,()->player1);
                             System.exit(0);
                             break;
                         } else if (a[0][2].equals(a[1][1]) && a[1][1].equals(a[2][0])) {
-                            l.info(player1);
+                            l.log(Level.info,()->player1);
                             System.exit(0);
                             break;
                         }
@@ -99,17 +99,17 @@ class Game{
             for(int i = 0; i<3; i++){
                 //hor
                 if(a[i][0].equals(a[i][1]) && a[i][1].equals(a[i][2]) && a[i][2].equals(a[i][0])){
-                    l.info(player2);
+                    l.log(Level.info,()->player2);
                     System.exit(0);
                 }
                 //ver
                 else if(a[0][i].equals(a[1][i]) && a[1][i].equals(a[2][i]) && a[2][i].equals(a[0][i])){
-                    l.info(player2);
+                    l.log(Level.info,()->player2);
                     System.exit(0);
                 }
                 //left to right cross
                 else if (a[0][0].equals(a[1][1]) && a[1][1].equals(a[2][2])) {
-                    l.info(player2);
+                    l.log(Level.info,()->player2);
                     System.exit(0);
                     break;
                 }
@@ -127,14 +127,14 @@ public class Tictactoc extends Game{
                 a[i][j] = String.valueOf(value++);
             }
         }
-        l.info(design);
+        l.log(Level.info,()->design);
         for (int i = 0; i < 3; i++) {
             l.info("|");
             for (int j = 0; j < 3; j++) {
                 String n = String.valueOf(a[i][j]);
                 l.log(Level.INFO,()->"\t" + n + "\t" + "|");
             }
-            l.info("\n" + design);
+            l.log(Level.info,()->"\n" + design);
         }
         t.players();
     }
