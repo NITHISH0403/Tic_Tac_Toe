@@ -20,7 +20,7 @@ class Game{
 
                     display(a);
 
-                    win(a, player1);
+                    condition(a, player1);
                 }
                 //player 2
                 else {
@@ -31,7 +31,7 @@ class Game{
 
                     display(a);
 
-                    win(a, player2);
+                    condition(a, player2);
                 }
             }
             else{
@@ -56,6 +56,38 @@ class Game{
             }
         }
     }
+
+    void condition(String[][] a, String x)
+    {
+        for(int i = 0; i<3; i++){
+            //hor
+            if(a[i][0].equals(a[i][1]) && a[i][1].equals(a[i][2]) && a[i][2].equals(a[i][0])){
+                winner(x);
+                System.exit(0);
+
+            }
+            //ver
+            else if(a[0][i].equals(a[1][i]) && a[1][i].equals(a[2][i]) && a[2][i].equals(a[0][i])){
+                winner(x);
+                System.exit(0);
+            }
+            //left to right cross
+            else if (a[0][0].equals(a[1][1]) && a[1][1].equals(a[2][2])) {
+                winner(x);
+                System.exit(0);
+            }
+            //right to left cross
+            else if (a[0][2].equals(a[1][1]) && a[1][1].equals(a[2][0])) {
+                winner(x);
+                System.exit(0);
+            }
+        }
+    }
+
+    void winner(String x){
+        System.out.println(x);
+    }
+    
     void display(String[][] a){
         for (int i = 0; i < 3; i++) {
             System.out.print("|");
@@ -64,32 +96,6 @@ class Game{
                 System.out.print("\t" + n + "\t" + "|");
             }
             System.out.println("\n");
-        }
-    }
-    void win(String[][] a,String x)
-    {
-        for(int i = 0; i<3; i++){
-            //hor
-            if(a[i][0].equals(a[i][1]) && a[i][1].equals(a[i][2]) && a[i][2].equals(a[i][0])){
-                System.out.println(x);
-                System.exit(0);
-
-            }
-            //ver
-            else if(a[0][i].equals(a[1][i]) && a[1][i].equals(a[2][i]) && a[2][i].equals(a[0][i])){
-                System.out.println(x);
-                System.exit(0);
-            }
-            //left to right cross
-            else if (a[0][0].equals(a[1][1]) && a[1][1].equals(a[2][2])) {
-                System.out.println(x);
-                System.exit(0);
-            }
-            //right to left cross
-            else if (a[0][2].equals(a[1][1]) && a[1][1].equals(a[2][0])) {
-                System.out.println(x);
-                System.exit(0);
-            }
         }
     }
 }
