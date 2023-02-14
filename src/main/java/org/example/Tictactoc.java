@@ -84,13 +84,11 @@ class Game{
             else if (a[0][0].equals(a[1][1]) && a[1][1].equals(a[2][2])) {
                 System.out.println(x);
                 System.exit(0);
-                break;
             }
             //right to left cross
             else if (a[0][2].equals(a[1][1]) && a[1][1].equals(a[2][0])) {
                 System.out.println(x);
                 System.exit(0);
-                break;
             }
         }
     }
