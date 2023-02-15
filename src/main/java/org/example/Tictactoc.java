@@ -39,7 +39,7 @@ class Game{
                 }
             }
             else{
-                System.out.println(draw);
+                l.log(Level.INFO,()->draw);
                 System.exit(0);
             }
 
