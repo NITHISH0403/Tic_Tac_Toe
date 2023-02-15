@@ -1,9 +1,11 @@
 package org.example;
 
 import java.util.Scanner;
+import java.util.logging.*;
 class Game{
     int search;
     static Scanner s = new Scanner(System.in);
+    static Logger l = Logger.getLogger("NITHISH");
     int play = 0;
     String player1 = "Player 1 is Winner.";
     String player2 = "Player 2 is Winner.";
@@ -15,7 +17,7 @@ class Game{
             //Player 1
             if(play != 16) {
                 if (play % 2 == 0) {
-                    System.out.println("Choose the place in Player 1 -> X:");
+                    l.info("Choose the place in Player 1 -> X:");
                     search = s.nextInt();
 
                     player(a, "X");
@@ -26,7 +28,7 @@ class Game{
                 }
                 //player 2
                 else {
-                    System.out.println("Choose the place in Player 2 -> O:");
+                    l.info("Choose the place in Player 2 -> O:");
                     search = s.nextInt();
 
                     player(a, "O");
@@ -54,7 +56,7 @@ class Game{
                         play++;
                     }
                     else {
-                        System.out.println("Please, Choose another place.");
+                        l.info("Please, Choose another place.");
                     }
                 }
             }
@@ -89,7 +91,7 @@ class Game{
     }
     //announce the final winner
     void winner(String x){
-        System.out.println(x);
+        l.log(Level.INFO,()->x);
     }
     //display the current board
     void display(String[][] a){
